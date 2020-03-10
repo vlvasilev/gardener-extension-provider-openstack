@@ -52,6 +52,14 @@ func (a *actuator) Delete(ctx context.Context, config *extensionsv1alpha1.Infras
 	return a.delete(ctx, config, cluster)
 }
 
+func (a *actuator) Restore(ctx context.Context, config *extensionsv1alpha1.Infrastructure, cluster *extensionscontroller.Cluster) error {
+	return a.restore(ctx, config, cluster)
+}
+
+func (a *actuator) Migrate(ctx context.Context, config *extensionsv1alpha1.Infrastructure, cluster *extensionscontroller.Cluster) error {
+	return a.migrate(ctx, config, cluster)
+}
+
 // Helper functions
 
 func (a *actuator) updateProviderStatus(

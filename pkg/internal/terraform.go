@@ -57,7 +57,7 @@ func NewTerraformer(
 
 	return tf.
 		SetVariablesEnvironment(variables).
-		SetActiveDeadlineSeconds(630).
+		SetTerminationGracePeriodSeconds(630).
 		SetDeadlineCleaning(5 * time.Minute).
 		SetDeadlinePod(15 * time.Minute), nil
 }

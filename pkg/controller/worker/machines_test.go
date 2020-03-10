@@ -620,7 +620,7 @@ func useDefaultMachineClass(def map[string]interface{}, key string, value interf
 func addNameAndSecretToMachineClass(class map[string]interface{}, openstackAuthURL, openstackDomainName, openstackTenantName, openstackUserName, openstackPassword, name string) {
 	class["name"] = name
 	class["labels"] = map[string]string{
-		v1beta1constants.GardenPurpose: genericworkeractuator.GardenPurposeMachineClass,
+		v1beta1constants.GardenerPurpose: genericworkeractuator.GardenPurposeMachineClass,
 	}
 	class["secret"].(map[string]interface{})[openstack.AuthURL] = openstackAuthURL
 	class["secret"].(map[string]interface{})[openstack.DomainName] = openstackDomainName

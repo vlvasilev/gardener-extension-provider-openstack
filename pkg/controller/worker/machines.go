@@ -180,7 +180,7 @@ func (w *workerDelegate) generateMachineConfig(ctx context.Context) error {
 
 			machineClassSpec["name"] = className
 			machineClassSpec["labels"] = map[string]string{
-				v1beta1constants.GardenPurpose: genericworkeractuator.GardenPurposeMachineClass,
+				v1beta1constants.GardenerPurpose: genericworkeractuator.GardenPurposeMachineClass,
 			}
 			machineClassSpec["secret"].(map[string]interface{})[openstack.AuthURL] = string(machineClassSecretData[machinev1alpha1.OpenStackAuthURL])
 			machineClassSpec["secret"].(map[string]interface{})[openstack.DomainName] = string(machineClassSecretData[machinev1alpha1.OpenStackDomainName])
